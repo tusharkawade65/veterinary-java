@@ -1,0 +1,151 @@
++------------------------+
+| Tables_in_veterinary   |
++------------------------+
+| animal_names           |
+| animal_types           |
+| dairy_deduction        |
+| dairy_names            |
+| doctor_login           |
+| everydaypaymentdetails |
+| farmer_details         |
+| paid_fees              |
+| treatment              |
+| unpaid_fees            |
++------------------------+
+10 rows in set (0.05 sec)
+
+
+
+ describe animal_names;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| animal_id   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| animal_name | varchar(20) | YES  |     | NULL    |                |
+| type_id     | int(11)     | YES  | MUL | NULL    |                |
+| farmer_id   | int(11)     | YES  | MUL | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+
+
+ describe animal_types;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| type_id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| animal_type | varchar(50) | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+
+
+ describe dairy_deduction;
++----------+---------+------+-----+---------+----------------+
+| Field    | Type    | Null | Key | Default | Extra          |
++----------+---------+------+-----+---------+----------------+
+| d_id     | int(11) | NO   | PRI | NULL    | auto_increment |
+| d_amount | int(11) | YES  |     | NULL    |                |
+| d_date   | date    | YES  |     | NULL    |                |
++----------+---------+------+-----+---------+----------------+
+3 rows in set (0.11 sec)
+
+
+
+
+ describe dairy_names;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| dairy_id   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| dairy_name | varchar(50) | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+2 rows in set (0.02 sec)
+
+
+describe doctor_login;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| doctor_id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| doctor_name  | varchar(50) | YES  |     | NULL    |                |
+| Phone_number | varchar(10) | YES  |     | NULL    |                |
+| username     | varchar(30) | YES  |     | NULL    |                |
+| password     | varchar(30) | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.05 sec)
+
+
+ describe everydaypaymentdetails;
++-----------+---------+------+-----+---------+----------------+
+| Field     | Type    | Null | Key | Default | Extra          |
++-----------+---------+------+-----+---------+----------------+
+| epdid     | int(11) | NO   | PRI | NULL    | auto_increment |
+| animal_id | int(11) | YES  | MUL | NULL    |                |
+| t_id      | int(11) | YES  | MUL | NULL    |                |
+| fee       | int(11) | YES  |     | NULL    |                |
+| farmer_id | int(11) | YES  | MUL | NULL    |                |
+| date      | date    | YES  |     | NULL    |                |
++-----------+---------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+
+ describe farmer_details;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| farmer_id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| farmer_name       | varchar(60)  | YES  |     | NULL    |                |
+| farmer_contact    | varchar(10)  | YES  | UNI | NULL    |                |
+| address           | varchar(100) | YES  |     | NULL    |                |
+| registration_date | date         | YES  |     | NULL    |                |
+| dairy_id          | int(11)      | YES  | MUL | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+
+ describe paid_fees;
++-----------+---------+------+-----+---------+----------------+
+| Field     | Type    | Null | Key | Default | Extra          |
++-----------+---------+------+-----+---------+----------------+
+| paid_id   | int(11) | NO   | PRI | NULL    | auto_increment |
+| paid_fees | int(11) | YES  |     | NULL    |                |
+| paid_date | date    | YES  |     | NULL    |                |
+| farmer_id | int(11) | YES  | MUL | NULL    |                |
++-----------+---------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+
+
+
+
+ describe treatment;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| t_id   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| t_name | varchar(30) | YES  |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+2 rows in set (0.05 sec)
+
+
+
+
+ describe unpaid_fees;
++-------------+---------+------+-----+---------+----------------+
+| Field       | Type    | Null | Key | Default | Extra          |
++-------------+---------+------+-----+---------+----------------+
+| unpaid_id   | int(11) | NO   | PRI | NULL    | auto_increment |
+| unpaid_fees | int(11) | YES  |     | NULL    |                |
+| farmer_id   | int(11) | YES  | MUL | NULL    |                |
+| unpaid_date | date    | YES  |     | NULL    |                |
++-------------+---------+------+-----+---------+----------------+
+4 rows in set (0.03 sec)
+
+
+
+
+
+
+
+
